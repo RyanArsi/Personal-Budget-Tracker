@@ -26,7 +26,7 @@
                 
                 <div class="form-group">
                     <label for="date">Data:</label>
-                    <input type="date" id="date" name="date" required>
+                    <input type="date" id="date" name="date" value="<?php echo date('Y-m-d'); ?>" required>
                 </div>
                 
                 <button type="submit" class="btn">Adicionar</button>
