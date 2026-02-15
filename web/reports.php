@@ -23,8 +23,19 @@
         
         <div class="charts-section">
             <h3>Gráficos e Análises</h3>
-            <div id="chartsContainer">
-                <p>Carregando gráficos...</p>
+            <div class="charts-wrapper">
+                <div class="chart-container">
+                    <h4>Distribuição Entradas vs Saídas</h4>
+                    <div id="incomeExpenseContainer">
+                        <canvas id="incomeExpenseChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <h4>Movimentações por Mês</h4>
+                    <div id="monthlyContainer">
+                        <canvas id="monthlyChart"></canvas>
+                    </div>
+                </div>
             </div>
         </div>
         

@@ -448,13 +448,146 @@ footer {
 
 /* Saldo positivo/negativo */
 .amount.positive {
-    color: #27ae60;
+
     font-weight: bold;
 }
 
 .amount.negative {
     color: #e74c3c;
     font-weight: bold;
+}
+
+/* Gráficos */
+.charts-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.chart-container {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chart-container h4 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-size: 1.2rem;
+}
+
+.chart-container canvas {
+    max-width: 100%;
+}
+
+/* Página de Relatórios */
+.page-reports h2 {
+    color: #2c3e50;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.page-reports > p {
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+.reports-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.summary-section,
+.charts-section,
+.filter-section {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.summary-section h3,
+.charts-section h3,
+.filter-section h3 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.summary-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card h4 {
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.card .amount {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.card.income {
+    background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+}
+
+.card.expense {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+}
+
+.card.balance {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+}
+
+.filters {
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.filters label {
+    display: flex;
+    flex-direction: column;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.filters select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-top: 5px;
+    font-size: 1rem;
+}
+
+.no-data-message {
+    text-align: center;
+    color: #999;
+    padding: 60px 20px;
+    font-size: 1.1rem;
+    background: #f5f5f5;
+    border-radius: 8px;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 @media (max-width: 768px) {
@@ -487,5 +620,13 @@ footer {
     .movements-table th,
     .movements-table td {
         padding: 8px;
+    }
+    
+    .charts-wrapper {
+        grid-template-columns: 1fr;
+    }
+    
+    .summary-cards {
+        grid-template-columns: 1fr;
     }
 }
