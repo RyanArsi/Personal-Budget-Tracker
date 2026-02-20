@@ -630,3 +630,65 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+/* ===== SALDO NA HOME ===== */
+.balance-preview {
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.balance-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px 50px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-width: 350px;
+}
+
+.balance-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+.balance-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    opacity: 0.9;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.balance-card .balance-amount {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.balance-card.positive {
+    background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+}
+
+.balance-card.negative {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+}
+
+@media (max-width: 768px) {
+    .balance-card {
+        min-width: 280px;
+        padding: 30px 40px;
+    }
+    
+    .balance-card .balance-amount {
+        font-size: 2.2rem;
+    }
+    
+    .balance-card h3 {
+        font-size: 1.1rem;
+    }
+}
+

@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Personal Budget Tracker carregado!');
     
     initializeApp();
+    loadHomeBalance();
 });
 
 
@@ -268,6 +269,38 @@ function createIncomeExpenseChart(movements) {
             }
         }
     });
+}
+
+function loadHomeBalance() {
+    const balanceAmountElement = document.querySelector('.balance-amount');
+    const balanceCard = document.querySelector('.balance-card');
+    
+    if (!balanceAmountElement || !balanceCard) return;
+    
+    const movements = JSON.parse(sessionStorage.getItem('movements')) || [];
+    
+    let totalIncome = 0;
+    let totalExpense = 0;
+    
+    movements.forEach(movement => {
+        if (movement.type === 'income') {
+            totalIncome += movement.amount;
+        } else {
+            totalExpense += movement.amount;
+        }
+    });
+    
+    const balance = totalIncome - totalExpense;
+    
+    balanceAmountElement.textContent = formatCurrency(balance);
+    
+    // Adicionar classe de estilo baseado no saldo
+    balanceCard.classList.remove('positive', 'negative');
+    if (balance >= 0) {
+        balanceCard.classList.add('positive');
+    } else {
+        balanceCard.classList.add('negative');
+    }
 }
 
 function createMonthlyChart(movements, selectedMonth, selectedYear) {
